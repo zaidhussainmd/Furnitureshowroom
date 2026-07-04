@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0d0d0d;
+  --color-surface: #1a1612;
+  --color-surface-light: #242018;
+  --color-accent-gold: #c9a84c;
+  --color-accent-gold-light: #e8c96a;
+  --color-text: #f5f0e8;
+  --color-muted: #8a8070;
+  --color-border: #2e2820;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Gold Shimmer / Glow Animation */
+@keyframes goldGlow {
+  0%, 100% {
+    text-shadow: 0 0 15px rgba(201, 168, 76, 0.3), 0 0 30px rgba(201, 168, 76, 0.1);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(201, 168, 76, 0.6), 0 0 40px rgba(201, 168, 76, 0.4), 0 0 60px rgba(201, 168, 76, 0.2);
+  }
+}
+
+.gold-glow {
+  animation: goldGlow 5s ease-in-out infinite;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Base custom styling for range slider track */
+input[type="range"]::-webkit-slider-thumb {
+  pointer-events: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 0;
+  background-color: #c9a84c;
+  border: 1px solid #e8c96a;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  pointer-events: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 0;
+  background-color: #c9a84c;
+  border: 1px solid #e8c96a;
+  cursor: pointer;
+}
